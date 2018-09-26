@@ -1,229 +1,229 @@
-  1 {
-  2   "definitions": {},
-  3   "$schema": "http://json-schema.org/draft-07/schema#",
-  4   "$id": "http://geojson.org/schema/MultiPolygon.json",
-  5   "type": "object",
-  6   "title": "The Root Schema",
-  7   "required": [
-  8     "features"
-  9   ],
- 10   "properties": {
- 11     "features": {
- 12       "$id": "#/properties/features",
- 13       "type": "object",
- 14       "title": "The Features Schema",
- 15       "required": [
- 16         "total",
- 17         "max_score",
- 18         "items"
- 19       ],
- 20       "properties": {
- 21         "total": {
- 22           "$id": "#/properties/features/properties/total",
- 23           "type": "integer",
- 24           "title": "The Total Schema",
- 25           "default": 0,
- 26           "examples": [
- 27             1
- 28           ]
- 29         },
- 30         "max_score": {
- 31           "$id": "#/properties/features/properties/max_score",
- 32           "type": "number",
- 33           "title": "The Max_score Schema",
- 34           "default": 0.0,
- 35           "examples": [
- 36             21.02701
- 37           ]
- 38         },
- 39         "items": {
- 40           "$id": "#/properties/features/properties/items",
- 41           "type": "array",
- 42           "title": "The Items Schema",
- 43           "items": {
- 44             "$id": "#/properties/features/properties/items/items",
- 45             "type": "object",
- 46             "title": "The Items Schema",
- 47             "required": [
- 48               "_score",
- 49               "type",
- 50               "properties",
- 51               "geometry"
- 52             ],
- 53             "properties": {
- 54               "_score": {
- 55                 "$id": "#/properties/features/properties/items/items/properties/_score",
- 56                 "type": "number",
- 57                 "title": "The _score Schema",
- 58                 "default": 0.0,
- 59                 "examples": [
- 60                   21.02701
- 61                 ]
- 62               },
- 63               "type": {
- 64                 "$id": "#/properties/features/properties/items/items/properties/type",
- 65                 "type": "string",
- 66                 "title": "The Type Schema",
- 67                 "default": "",
- 68                 "examples": [
- 69                   "Feature"
- 70                 ],
- 71                 "pattern": "^(.*)$"
- 72               },
- 73               "properties": {
- 74                 "$id": "#/properties/features/properties/items/items/properties/properties",
- 75                 "type": "object",
- 76                 "title": "The Properties Schema",
- 77                 "required": [
- 78                   "ogc_fid",
- 79                   "gid",
- 80                   "feature_class",
- 81                   "feature_name",
- 82                   "feature_id",
- 83                   "feature_description"
- 84                 ],
- 85                 "properties": {
- 86                   "ogc_fid": {
- 87                     "$id": "#/properties/features/properties/items/items/properties/properties/properties/ogc_fid",
- 88                     "type": "integer",
- 89                     "title": "The Ogc_fid Schema",
- 90                     "default": 0,
- 91                     "examples": [
- 92                       5139
- 93                     ]
- 94                   },
- 95                   "gid": {
- 96                     "$id": "#/properties/features/properties/items/items/properties/properties/properties/gid",
- 97                     "type": "integer",
- 98                     "title": "The Gid Schema",
- 99                     "default": 0,
-100                     "examples": [
-101                       5139
-102                     ]
-103                   },
-104                   "feature_class": {
-105                     "$id": "#/properties/features/properties/items/items/properties/properties/properties/feature_class",
-106                     "type": "string",
-107                     "title": "feature_class",
-108                     "description": "Category or classification of a feature",
-109                     "examples": [
-110                       "Wilderness Area"
-111                     ],
-112                     "pattern": "^(.*)$"
-113                   },
-114                   "feature_name": {
-115                     "$id": "#/properties/features/properties/items/items/properties/properties/properties/feature_name",
-116                     "type": "string",
-117                     "title": "feature_name",
-118                     "description": "A reference name for the feature",
-119                     "examples": [
-120                       "San Pedro Parks Wilderness"
-121                     ],
-122                     "minLength": 1,
-123                     "pattern": "^(.*)$"
-124                   },
-125                   "feature_id": {
-126                     "$id": "#/properties/features/properties/items/items/properties/properties/properties/feature_id",
-127                     "type": "string",
-128                     "title": "feature_id",
-129                     "description": "A compound identifier for a feature in URN syntax with the following components - <source indicator>:<identifier type in that source>:<meaningful identifier of that type in the source>",
-130                     "examples": [
-131                       "PADUS1_4:WA:San Pedro Parks Wilderness"
-132                     ],
-133                     "pattern": "^(.*)$"
-134                   },
-135                   "feature_description": {
-136                     "$id": "#/properties/features/properties/items/items/properties/properties/properties/feature_description",
-137                     "type": "string",
-138                     "title": "feature_description",
-139                     "description": "A string of variable length describing a feature in some additional detail.",
-140                     "default": null,
-141                     "examples": [
-142                       ""
-143                     ],
-144                     "pattern": "^(.*)$"
-145                   },
-146                   "source_data": {
-147                     "$id": "#/properties/features/properties/items/items/properties/properties/properties/source_data",
-148                     "type": [
-149                       "object",
-150                       "string"
-151                     ],
-152                     "title": "source_data",
-153                     "description": "A universal property containing a source data structure that will be variable across a collection. It is included to aid in discovery and deeper understanding of a given integrated data point.",
-154                     "default": null,
-155                     "examples": [
-156                       "[ { \"access\": \"RA\", \"d_access\": \"Restricted Access\", \"access_src\": \"GAP - Default\", \"agg_src\": \"GAP_PADUS1_4Designation_USFS_ALP_S_USA.Wilderness\", \"category\": \"Designation\", \"d_category\": \"Designation\", \"comments\": \"Final\", \"date_est\": \"1964\", \"gapcddt\": \"2014\", \"gapcdsrc\": \"Interagency Wilderness Steering Committee\", \"gap_sts\": \"1\", \"d_gap_sts\": \"1 - managed for biodiversity - disturbance events proceed or are mimicked\", \"gis_acres\": 41305, \"gis_src\": \"USFS_ALP_S_USA.Wilderness.gdb\\/Wilderness\", \"iucnctdt\": \"2015\", \"iucnctsrc\": \"GAP - Default\", \"iucn_cat\": \"Ib\", \"d_iucn_cat\": \"Ib: Wilderness areas\", \"loc_ds\": \"\", \"loc_mang\": \"\", \"loc_nm\": \"San Pedro Parks Wilderness\", \"loc_own\": \"\", \"mang_name\": \"USFS\", \"d_mang_name\": \"Forest Service\", \"mang_type\": \"FED\", \"d_mang_typ\": \"Federal\", \"own_name\": \"DESG\", \"d_own_name\": \"Designation\", \"own_type\": \"DESG\", \"d_own_type\": \"Designation\", \"source_pai\": \"10514010343\", \"state_nm\": \"NM\", \"d_state_nm\": \"New Mexico\", \"wdpa_cd\": 374266 } ]"
-157                     ],
-158                     "pattern": "^(.*)$"
-159                   }
-160                 }
-161               },
-162               "geometry": {
-163                 "$id": "#/properties/features/properties/items/items/properties/geometry",
-164                 "type": "object",
-165                 "title": "geometry",
-166                 "description": "Universal object in valid GeoJSON syntax",
-167                 "default": null,
-168                 "required": [
-169                   "type",
-170                   "coordinates"
-171                 ],
-172                 "properties": {
-173                   "type": {
-174                     "$id": "#/properties/features/properties/items/items/properties/geometry/properties/type",
-175                     "type": "string",
-176                     "title": "geojson_type",
-177                     "description": "Type of GeoJSON object contained in this record",
-178                     "default": "",
-179                     "examples": [
-180                       "FeatureCollection",
-181                       "Feature",
-182                       "Geometry",
-183                       "GeometryCollection",
-184                       "MultiPolygon",
-185                       "MultiLineString",
-186                       "MultiPoint",
-187                       "Polygon",
-188                       "LineString",
-189                       "Point"
-190                     ],
-191                     "pattern": "^(.*)$"
-192                   },
-193                   "coordinates": {
-194                     "$id": "#/properties/features/properties/items/items/properties/geometry/properties/coordinates",
-195                     "type": "array",
-196                     "title": "geojson_coordinates",
-197                     "description": "Universal property containing valid GeoJSON coordinates",
-198                     "items": {
-199                       "$id": "#/properties/features/properties/items/items/properties/geometry/properties/coordinates/items",
-200                       "type": "array",
-201                       "items": {
-202                         "$id": "#/properties/features/properties/items/items/properties/geometry/properties/coordinates/items/items",
-203                         "type": "array",
-204                         "minItems": 4,
-205                         "items": {
-206                           "$id": "#/properties/features/properties/items/items/properties/geometry/properties/coordinates/items/items/items",
-207                           "type": "array",
-208                           "minItems": 2,
-209                           "items": {
-210                             "$id": "#/properties/features/properties/items/items/properties/geometry/properties/coordinates/items/items/items/items",
-211                             "type": "number",
-212                             "examples": [
-213                               -106.75956477943,
-214                               36.0577130897215
-215                             ]
-216                           }
-217                         }
-218                       }
-219                     }
-220                   }
-221                 }
-222               }
-223             }
-224           }
-225         }
-226       }
-227     }
-228   }
-229 }
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://geojson.org/schema/MultiPolygon.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "features"
+  ],
+  "properties": {
+    "features": {
+      "$id": "#/properties/features",
+      "type": "object",
+      "title": "The Features Schema",
+      "required": [
+        "total",
+        "max_score",
+        "items"
+      ],
+      "properties": {
+        "total": {
+          "$id": "#/properties/features/properties/total",
+          "type": "integer",
+          "title": "The Total Schema",
+          "default": 0,
+          "examples": [
+            1
+          ]
+        },
+        "max_score": {
+          "$id": "#/properties/features/properties/max_score",
+          "type": "number",
+          "title": "The Max_score Schema",
+          "default": 0.0,
+          "examples": [
+            21.02701
+          ]
+        },
+        "items": {
+          "$id": "#/properties/features/properties/items",
+          "type": "array",
+          "title": "The Items Schema",
+          "items": {
+            "$id": "#/properties/features/properties/items/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "required": [
+              "_score",
+              "type",
+              "properties",
+              "geometry"
+            ],
+            "properties": {
+              "_score": {
+                "$id": "#/properties/features/properties/items/items/properties/_score",
+                "type": "number",
+                "title": "The _score Schema",
+                "default": 0.0,
+                "examples": [
+                  21.02701
+                ]
+              },
+              "type": {
+                "$id": "#/properties/features/properties/items/items/properties/type",
+                "type": "string",
+                "title": "The Type Schema",
+                "default": "",
+                "examples": [
+                  "Feature"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "properties": {
+                "$id": "#/properties/features/properties/items/items/properties/properties",
+                "type": "object",
+                "title": "The Properties Schema",
+                "required": [
+                  "ogc_fid",
+                  "gid",
+                  "feature_class",
+                  "feature_name",
+                  "feature_id",
+                  "feature_description"
+                ],
+                "properties": {
+                  "ogc_fid": {
+                    "$id": "#/properties/features/properties/items/items/properties/properties/properties/ogc_fid",
+                    "type": "integer",
+                    "title": "The Ogc_fid Schema",
+                    "default": 0,
+                    "examples": [
+                      5139
+                    ]
+                  },
+                  "gid": {
+                    "$id": "#/properties/features/properties/items/items/properties/properties/properties/gid",
+                    "type": "integer",
+                    "title": "The Gid Schema",
+                    "default": 0,
+                    "examples": [
+                      5139
+                    ]
+                  },
+                  "feature_class": {
+                    "$id": "#/properties/features/properties/items/items/properties/properties/properties/feature_class",
+                    "type": "string",
+                    "title": "feature_class",
+                    "description": "Category or classification of a feature",
+                    "examples": [
+                      "Wilderness Area"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "feature_name": {
+                    "$id": "#/properties/features/properties/items/items/properties/properties/properties/feature_name",
+                    "type": "string",
+                    "title": "feature_name",
+                    "description": "A reference name for the feature",
+                    "examples": [
+                      "San Pedro Parks Wilderness"
+                    ],
+                    "minLength": 1,
+                    "pattern": "^(.*)$"
+                  },
+                  "feature_id": {
+                    "$id": "#/properties/features/properties/items/items/properties/properties/properties/feature_id",
+                    "type": "string",
+                    "title": "feature_id",
+                    "description": "A compound identifier for a feature in URN syntax with the following components - <source indicator>:<identifier type in that source>:<meaningful identifier of that type in the source>",
+                    "examples": [
+                      "PADUS1_4:WA:San Pedro Parks Wilderness"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "feature_description": {
+                    "$id": "#/properties/features/properties/items/items/properties/properties/properties/feature_description",
+                    "type": "string",
+                    "title": "feature_description",
+                    "description": "A string of variable length describing a feature in some additional detail.",
+                    "default": null,
+                    "examples": [
+                      ""
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "source_data": {
+                    "$id": "#/properties/features/properties/items/items/properties/properties/properties/source_data",
+                    "type": [
+                      "object",
+                      "string"
+                    ],
+                    "title": "source_data",
+                    "description": "A universal property containing a source data structure that will be variable across a collection. It is included to aid in discovery and deeper understanding of a given integrated data point.",
+                    "default": null,
+                    "examples": [
+                      "[ { \"access\": \"RA\", \"d_access\": \"Restricted Access\", \"access_src\": \"GAP - Default\", \"agg_src\": \"GAP_PADUS1_4Designation_USFS_ALP_S_USA.Wilderness\", \"category\": \"Designation\", \"d_category\": \"Designation\", \"comments\": \"Final\", \"date_est\": \"1964\", \"gapcddt\": \"2014\", \"gapcdsrc\": \"Interagency Wilderness Steering Committee\", \"gap_sts\": \"1\", \"d_gap_sts\": \"1 - managed for biodiversity - disturbance events proceed or are mimicked\", \"gis_acres\": 41305, \"gis_src\": \"USFS_ALP_S_USA.Wilderness.gdb\\/Wilderness\", \"iucnctdt\": \"2015\", \"iucnctsrc\": \"GAP - Default\", \"iucn_cat\": \"Ib\", \"d_iucn_cat\": \"Ib: Wilderness areas\", \"loc_ds\": \"\", \"loc_mang\": \"\", \"loc_nm\": \"San Pedro Parks Wilderness\", \"loc_own\": \"\", \"mang_name\": \"USFS\", \"d_mang_name\": \"Forest Service\", \"mang_type\": \"FED\", \"d_mang_typ\": \"Federal\", \"own_name\": \"DESG\", \"d_own_name\": \"Designation\", \"own_type\": \"DESG\", \"d_own_type\": \"Designation\", \"source_pai\": \"10514010343\", \"state_nm\": \"NM\", \"d_state_nm\": \"New Mexico\", \"wdpa_cd\": 374266 } ]"
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              },
+              "geometry": {
+                "$id": "#/properties/features/properties/items/items/properties/geometry",
+                "type": "object",
+                "title": "geometry",
+                "description": "Universal object in valid GeoJSON syntax",
+                "default": null,
+                "required": [
+                  "type",
+                  "coordinates"
+                ],
+                "properties": {
+                  "type": {
+                    "$id": "#/properties/features/properties/items/items/properties/geometry/properties/type",
+                    "type": "string",
+                    "title": "geojson_type",
+                    "description": "Type of GeoJSON object contained in this record",
+                    "default": "",
+                    "examples": [
+                      "FeatureCollection",
+                      "Feature",
+                      "Geometry",
+                      "GeometryCollection",
+                      "MultiPolygon",
+                      "MultiLineString",
+                      "MultiPoint",
+                      "Polygon",
+                      "LineString",
+                      "Point"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "coordinates": {
+                    "$id": "#/properties/features/properties/items/items/properties/geometry/properties/coordinates",
+                    "type": "array",
+                    "title": "geojson_coordinates",
+                    "description": "Universal property containing valid GeoJSON coordinates",
+                    "items": {
+                      "$id": "#/properties/features/properties/items/items/properties/geometry/properties/coordinates/items",
+                      "type": "array",
+                      "items": {
+                        "$id": "#/properties/features/properties/items/items/properties/geometry/properties/coordinates/items/items",
+                        "type": "array",
+                        "minItems": 4,
+                        "items": {
+                          "$id": "#/properties/features/properties/items/items/properties/geometry/properties/coordinates/items/items/items",
+                          "type": "array",
+                          "minItems": 2,
+                          "items": {
+                            "$id": "#/properties/features/properties/items/items/properties/geometry/properties/coordinates/items/items/items/items",
+                            "type": "number",
+                            "examples": [
+                              -106.75956477943,
+                              36.0577130897215
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
